@@ -1,0 +1,14 @@
+<div id='area-responsable-chart' class='row chart-item' ng-show="total_obras_by_area.length">
+    <div class='col-xs-12 destino-header'>
+        <h4 class='destino-title'>{{ i18n.filterByGovernmentArea }}</h4>
+        <select ng-show='total_obras_by_area.length' id='areas' class='form-control' ng-model='selected'>
+            <option value=''>{{ i18n.all }}</option>
+            <option ng-repeat='option in total_obras_by_area' value='{{option.slug}}'>{{option.area}}</option>
+        </select>
+    </div>
+    <div class='col-xs-12 destino-result'>
+        <div id='mini-chart' ng-class="{'all':selected==''}"></div>
+        <p ng-show='selectedCantidad'>{{selectedCantidad}} {{ i18n.plannedWorks }} <span ng-show='selectedCantidad!=total'>({{selectedCantidad*100/total | number:0}}% {{ i18n.ofTheTotal }})</span>
+        </p>
+    </div>
+</div>

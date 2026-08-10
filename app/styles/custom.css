@@ -1,0 +1,22 @@
+/* Add custom css here */
+@media (min-width: 300px) {
+    .container {
+      width: 1320px;
+    }
+    .container-fluid {
+        width: 100%;
+      }
+      
+  }
+
+.btn-azul{
+    background-color:#222587;
+}
+
+#tooltip-home-chart #tooltip-logo-container .sincircle-bg {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: block;
+}
+

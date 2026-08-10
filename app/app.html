@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Portal de obras - Gobierno de la provincia de Salta</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/BAstrap/bastrap.css" />
+  <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="bower_components/flexslider/flexslider.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/ng-table.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/custom.css">
+  <!-- endbuild -->
+</head>
+
+<body ng-app="obrasMduytApp">
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- <img src="images/LogoGobiernoDeSalta-WEB.png" style="padding:15px;width:15%"><br> -->
+      <img src="images/FotoPortada.jpg" style="width:100%">
+    </div>
+    <!--
+        <div class="col-md-6">
+          <br>
+          <a class="btn btn-primary btn-block btn-lg" target="" href="/demo-home.html">INICIO <i class="glyphicon glyphicon-new-window"></i></a>
+          <br>
+      </div>
+      <div class="col-md-6">
+          <br>
+          <a class="btn btn-primary btn-block btn-lg" href="/app.html?initialWidth=0&childId=pym-container&parentTitle=Buscador%20de%20obras&parentUrl=/#/buscador">BUSCAR</a>
+          <br>
+      </div>
+    -->
+    <div class="container-fluid"></div><div ng-view=""></div></div>
+  </div>
+
+  <footer class="obras-footer">
+    <div class="obras-footer-logos">
+      <div class="logo-card"><img src="images/logos_footer/logo1.png" alt="Ministerio de Infraestructura - Gobierno de Salta"></div>
+      <div class="logo-card"><img src="images/logos_footer/logo2.png" alt="IPV"></div>
+      <div class="logo-card"><img src="images/logos_footer/logo3.png" alt="Secretaría del Interior - Gobierno de Salta"></div>
+      <div class="logo-card"><img src="images/logos_footer/logo4.png" alt="Modernización"></div>
+      <div class="logo-card"><img src="images/logos_footer/logo5.png" alt="Agencia de Información de Políticas Públicas - Gobierno de Salta"></div>
+      <div class="logo-card"><img src="images/logos_footer/logo6.png" alt="Ministerio de Educación, Cultura, Ciencia y Tecnología - Gobierno de Salta"></div>
+      <div class="logo-card"><img src="images/logos_footer/logo7.png" alt="DVS - Dirección de Vialidad de Salta"></div>
+      <div class="logo-card"><img src="images/logos_footer/logo8.png" alt="Ministerio de Economía y Servicios Públicos - Gobierno de Salta"></div>
+    </div>
+  </footer>
+
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/lodash/lodash.js"></script>
+  <script src="bower_components/d3/d3.js"></script>
+  <script src="bower_components/pym.js/dist/pym.v1.js"></script>
+  <script src="bower_components/angular-slugify/angular-slugify.js"></script>
+  <script src="bower_components/leaflet/dist/leaflet-src.js"></script>
+  <script src="bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js"></script>
+  <script src="bower_components/flexslider/jquery.flexslider.js"></script>
+  <script src="bower_components/angular-flexslider/angular-flexslider.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <script src="config.js"></script>
+
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/libs/d3.sankey.js"></script>
+  <script src="scripts/libs/papaparse.min.js"></script>
+  <script src="scripts/data.js"></script>
+  <script src="scripts/i18n.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/directives/progress-line.js"></script>
+  <script src="scripts/directives/colored-icons.js"></script>
+  <script src="scripts/directives/selector-home.js"></script>
+  <script src="scripts/directives/stats-home.js"></script>
+  <script src="scripts/directives/tipo-chart.js"></script>
+  <script src="scripts/directives/etapa-chart.js"></script>
+  <script src="scripts/directives/area-responsable-chart.js"></script>
+  <script src="scripts/directives/ngYoutubeEmbed.js"></script>
+  <script src="scripts/controllers/home.js"></script>
+  <script src="scripts/controllers/obra.js"></script>
+  <script src="scripts/controllers/entorno.js"></script>
+  <script src="scripts/controllers/buscador.js"></script>
+  <script src="scripts/libs/ng-table.min.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>

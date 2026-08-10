@@ -1,0 +1,79 @@
+<div ng-show="loading" class="row">
+  <div class="col-sm-12">
+    <h1 id="loading" class="text-center">{{ i18n.loading }}</h1>
+    <p class="text-center"><img src="images/loader.gif"/></p>
+    <hr/>
+  </div>
+</div>
+
+
+<div ng-if="!loading">
+
+  <div class="row">
+      <table id="buscador-table" ng-table-dynamic="tableParams with cols" class="table table-responsive" >
+          <tr ng-repeat="row in $data">
+          </tr>
+      </table>
+  </div>
+
+  <div class="row">
+    <h2 ng-show="results.length==0" class="text-center">{{ i18n.noResults }}</h2>
+    <div class="col-sm-12 well resultado-buscador" ng-repeat="o in results">
+      <div class="row">
+        <div class="col-sm-3">
+          <img ng-show="o.imagen_1" ng-src="{{o.imagen_1}}" class="img-responsive"/>
+          <img ng-hide="o.imagen_1" ng-src="http://placehold.it/400x300" class="img-responsive"/>
+
+        </div>
+        <div class="col-sm-9">
+          <div class="row">
+            <div class="col-sm-6">
+              <span class="title">{{ i18n.plannedWork }}:</span>
+              <span class="desc">{{o.nombre}}</span>
+            </div>
+            <div class="col-sm-3" ng-if="o.licitacion_oferta_empresa">
+              <span class="title">{{ i18n.company }}:</span>
+              <span class="desc">{{o.licitacion_oferta_empresa}}</span>
+            </div>
+            <div class="col-sm-3" ng-if="o.monto_contrato">
+              <span class="title">{{ i18n.investmentAmount }}:</span>
+              <span class="desc">{{o.monto_contrato | currency}}</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <span class="title">{{ i18n.description }}:</span>
+              <span class="desc">{{o.descripcion}}</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2" ng-if="o.area_responsable">
+              <span class="title">{{ i18n.responsableArea }}:</span>
+              <span class="desc">{{o.area_responsable}}</span>
+            </div>
+            <div class="col-sm-2" ng-if="o.tipo">
+              <span class="title">{{ i18n.type }}:</span>
+              <span class="desc">{{o.tipo}}</span>
+            </div>
+            <div class="col-sm-2" ng-if="o.comuna">
+              <span class="title">{{ i18n.commune }}:</span>
+              <span class="desc">{{ i18n.commune }} {{o.comuna}}</span>
+            </div>
+            <div class="col-sm-2" ng-if="o.etapa">
+              <span class="title">{{ i18n.stage }}:</span>
+              <span class="desc">{{o.etapa}}</span>
+            </div>
+            <div class="col-sm-3 col-sm-offset-1">
+              <a ng-show="o.link_interno" ng-href="{{o.link_interno}}" target="_parent" class="btn btn-default btn-block">{{ i18n.moreInformation }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div id="footer" class="col-sm-12">
+    </div>
+  </div>
+</div>
