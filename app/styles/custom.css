@@ -1,4 +1,16 @@
 /* Add custom css here */
+
+.fecha-actualizacion {
+  padding-top: 30px;
+  float: right;
+  display: block;
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+  color: #231f20;
+}
+
 @media (min-width: 300px) {
     .container {
       width: 1320px;

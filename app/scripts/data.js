@@ -134,6 +134,25 @@ var cleanData = function(oldReg, index, Slug) {
 };
 
 
+// Fecha de actualización de los datos, mostrada en el home (ver stats-home.html).
+// Por defecto se calcula sola a partir de la fecha de modificación del archivo
+// data.csv (header HTTP "Last-Modified" que manda el servidor de archivos estáticos):
+// cada vez que se reemplaza data.csv por una versión nueva, la fecha se actualiza sin
+// tocar código. Si hace falta forzar una fecha puntual (por ej. el archivo se sirve
+// desde un origen que no manda ese header), se puede setear DATA_UPDATED_DATE en
+// config.js con un string ya formateado (ej: "27/08/2026") y ese valor tiene prioridad.
+var dataUpdatedAt = null;
+
+function getDataUpdatedAt() {
+  return dataUpdatedAt;
+}
+
+function formatDataUpdatedAt(date) {
+  var day = ('0' + date.getDate()).slice(-2);
+  var month = ('0' + (date.getMonth() + 1)).slice(-2);
+  return day + '/' + month + '/' + date.getFullYear();
+}
+
 function loadData ($sce, $q, $http, Slug) {
   if(!window.MDUYT_CONFIG){
     throw 'Archivo de configuración inexistente';
@@ -151,6 +170,14 @@ function loadData ($sce, $q, $http, Slug) {
       data = Papa.parse(result.data, { header:true }).data;
     }
     data = data.map(function (reg, index) { return cleanData(reg, index, Slug)});
+
+    if (window.MDUYT_CONFIG.DATA_UPDATED_DATE) {
+      dataUpdatedAt = window.MDUYT_CONFIG.DATA_UPDATED_DATE;
+    } else {
+      var lastModified = (typeof result.headers === 'function') ? result.headers('last-modified') : null;
+      dataUpdatedAt = lastModified ? formatDataUpdatedAt(new Date(lastModified)) : null;
+    }
+
     deferred.resolve(data);
   };
 

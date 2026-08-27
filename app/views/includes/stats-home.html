@@ -4,7 +4,7 @@
       <h1 class="center ">{{ i18n.homeTitle }}</h1>
     </div>
     <div class="col-xs-6">
-      <img src="images/fechaActualizacion.png" width="300px" style="padding-top:30px;float:right;display: block;">
+      <div class="fecha-actualizacion" ng-if="dataUpdatedAt">{{ i18n.dataUpdatedLabel }}: {{ dataUpdatedAt }}</div>
     </div>
 
   </div>

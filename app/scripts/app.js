@@ -112,6 +112,10 @@ angular
       return $q.when(result);
     };
 
+    this.getUpdatedAt = function() {
+      return getDataUpdatedAt();
+    };
+
     this.getMapas = function() {
       var result;
       var deferred = $q.defer();

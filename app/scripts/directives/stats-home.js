@@ -2,7 +2,7 @@
 
 angular
   .module("obrasMduytApp")
-  .directive("statsHome", function ($timeout, $interval) {
+  .directive("statsHome", function ($timeout, $interval, DataService) {
     return {
       restrict: "E",
       scope: {
@@ -12,6 +12,7 @@ angular
       replace: true,
       link: function ($scope, elm, attrs) {
         $scope.i18n = window._i18n;
+        $scope.dataUpdatedAt = DataService.getUpdatedAt();
 
         $scope.total = {
           inversion: 0,
@@ -40,6 +41,7 @@ angular
             obras = angular.copy(value);
             generateTotal();
             setFinalNumbers();
+            $scope.dataUpdatedAt = DataService.getUpdatedAt();
           }
         });
 

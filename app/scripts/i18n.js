@@ -5,6 +5,7 @@ window._i18n = {
   subtitle: "Esta es la página de prueba para visualizar las obras de SITE_NAME. Click para ver página.",
 
   homeTitle: "Portal de Obras",
+  dataUpdatedLabel: "Fecha de actualización",
   homeButton: "Home",
   searchButton: "Buscador",
 
